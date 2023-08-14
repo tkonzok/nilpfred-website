@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #000;
-  background-image: url("./assets/images/logo_768.png");
+  background-image: url("./assets/images/logo_1024.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -51,25 +51,11 @@ nav h2 {
 
 .hero-container {
   width: 100vw;
-  height: 100lvh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  /*animation-name: fade-to-black;
-  animation-duration: 4s;
-  animation-delay: 4s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;*/
-}
-
-@keyframes fade-to-black {
-  0% {
-    background-color: #00000000;
-  }
-  100% {
-    background-color: #000;
-  }
 }
 
 .hero {

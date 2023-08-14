@@ -98,7 +98,6 @@ function Quotes() {
       ref={ref}
       className={inView ? "quotes slide-in from-bottom delay7" : "quotes"}
     >
-      {quote}
       <div className={quote === 0 ? "quote visible" : "quote invisible"}>
         <em>
           „ ...unterhaltsame, wirklich lustige, nicht zu alberne poppige

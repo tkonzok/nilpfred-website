@@ -25,7 +25,8 @@ body {
   min-width: 320px;
   width: 100vw;
   min-height: 100vh;
-  height: 100lvh;
+  min-height: -webkit-fill-available;
+  height: 100%;
   max-width: 100%;
 }
 
