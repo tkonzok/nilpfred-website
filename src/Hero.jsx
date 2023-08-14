@@ -13,6 +13,7 @@ import Music from "./assets/icons/music.svg";
 import Facebook from "./assets/icons/facebook.svg";
 import Instagram from "./assets/icons/instagram.svg";
 import Youtube from "./assets/icons/youtube.svg";
+import ArrowDown from "./assets/icons/arrow-down.svg";
 
 function BandImage() {
   const { ref, inView, entry } = useInView({
@@ -128,6 +129,18 @@ function Quotes() {
   );
 }
 
+function NextPage() {
+  function scrollDown() {
+    window.scrollBy(0, 100);
+  }
+
+  return (
+    <button className="nextPage" onClick={scrollDown}>
+      <img src={ArrowDown} alt="Arrow Down" className="arrow-down" />
+    </button>
+  );
+}
+
 function Hero() {
   return (
     <>
@@ -143,6 +156,7 @@ function Hero() {
         <div className="quotes-container">
           <Quotes />
         </div>
+        <NextPage />
       </div>
     </>
   );

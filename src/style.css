@@ -16,11 +16,18 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #000;
-  background-image: url("./assets/images/logo_1024.png");
+  background-image: url("./assets/images/logo_1920.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 80%;
   background-attachment: fixed;
+}
+
+#root {
+  position: relative;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 /* SMALL MOBILE */
@@ -51,11 +58,12 @@ nav h2 {
 
 .hero-container {
   width: 100vw;
-  height: 100%;
+  height: 100lvh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+  scroll-snap-align: start;
 }
 
 .hero {
@@ -240,6 +248,8 @@ nav h2 {
   opacity: 0;
   position: absolute;
   top: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .visible {
@@ -275,7 +285,55 @@ nav h2 {
   }
 }
 
+.arrow-down {
+  position: fixed;
+  bottom: 5%;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #00000000;
+}
+
 /* INFO */
+.info-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  scroll-snap-align: start;
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    300deg,
+    #00000090,
+    var(--petrol-dark-transparent),
+    var(--yellow)
+  );
+  background-size: 180% 180%;
+  animation-name: gradient-animation;
+  animation-duration: 30s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* MUSIC */
 
@@ -287,7 +345,7 @@ nav h2 {
 
   /* HERO */
   .band-img {
-    height: min(50vw, 40lvh, 320px);
+    height: min(50vw, 30lvh, 320px);
   }
 
   .links-container {
