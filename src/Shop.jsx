@@ -60,9 +60,7 @@ function Carousel() {
       >
         Old school as old school can! Mit 16-seitigem, voll farbigem Booklet.
         Voller toller Infos und nicer Illus und Fotos und mit allen Texten zum
-        Mitlesen, einstudieren und mitsingen! Enthält unbegrenztes Streaming von
-        Tyrannopotamus Rex und außerdem den hochwertigen Download als MP3, FLAC
-        und mehr.
+        Mitlesen, einstudieren und mitsingen!
       </p>
       <div
         className={
@@ -84,9 +82,7 @@ function Carousel() {
         }
       >
         Alles DIY, soviel Gebastel.... Es ist alles für Dich vorbereitet, nur
-        Spulen musst Du selbst! Enthält unbegrenztes Streaming von
-        Tyrannopotamus Rex und außerdem den hochwertigen Download als MP3, FLAC
-        und mehr.
+        Spulen musst Du selbst!
       </p>
       <div
         className={
@@ -109,9 +105,7 @@ function Carousel() {
       >
         Sieht aus wie eine LP, mit tollem Cover und allem Pipapo. Sieht
         spitzenmäßig aus im Plattenschrank. Ist auch Vinyl drin, aber kein
-        Tyrannopotamus Rex drauf. Nur für Poser. Aber das richtig! Enthält
-        unbegrenztes Streaming von Tyrannopotamus Rex und außerdem den
-        hochwertigen Download als MP3, FLAC und mehr.
+        Tyrannopotamus Rex drauf. Nur für Poser. Aber das richtig!
       </p>
       <div
         className={
@@ -176,7 +170,7 @@ function Shop() {
         </div>
         <Carousel />
         <div>
-          <p>All den Nilpfred March und noch viel mehr gibt's in unserem:</p>
+          <p>All den Nilpfred Merch und noch viel mehr gibt's in unserem:</p>
           <a href="https://stereola.bandcamp.com/" className="shop-link">
             SHOP
           </a>

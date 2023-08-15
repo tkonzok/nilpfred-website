@@ -420,6 +420,7 @@ nav h2 {
   transform: rotateY(0deg);
   animation-name: rotate-album;
   animation-duration: 10s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
