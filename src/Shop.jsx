@@ -9,6 +9,10 @@ import Cd320 from "./assets/images/cd_320.jpg";
 import Cd512 from "./assets/images/cd_512.jpg";
 import Lp320 from "./assets/images/lp_320.jpg";
 import Lp512 from "./assets/images/lp_512.jpg";
+import Knapp320 from "./assets/images/knapp_320.jpg";
+import Knapp512 from "./assets/images/knapp_512.jpg";
+import Heiter320 from "./assets/images/heiter_320.jpg";
+import Heiter512 from "./assets/images/heiter_512.jpg";
 
 function Carousel() {
   const { ref, inView, entry } = useInView({
@@ -16,11 +20,11 @@ function Carousel() {
     triggerOnce: true,
   });
 
-  const [article, setArticle] = useState(2);
+  const [article, setArticle] = useState(4);
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
-    if (article < 2) {
+    if (article < 4) {
       setArticle(article + 1);
     } else {
       setArticle(0);
@@ -29,7 +33,7 @@ function Carousel() {
 
   useEffect(() => {
     startNewInterval(8000);
-  }, [article]);
+  }, [article, inView]);
 
   return (
     <div className="carousel" ref={ref}>
@@ -40,12 +44,26 @@ function Carousel() {
       >
         <img
           srcSet={`${Cd320} 320w, ${Cd512} 512w`}
-          alt="Picture of Album on MC"
-          className="mc-img"
+          alt="Picture of Album on CD"
+          className="cd-img"
         />
-        <p className="article-name">MC</p>
-        <p className="article-description">Beschreibung</p>
+        <p className="article-name">
+          Tyrannopotomatische Compact Disc + Digitales Album
+        </p>
       </div>
+      <p
+        className={
+          article === 0
+            ? "article-description visible"
+            : "article-description invisible"
+        }
+      >
+        Old school as old school can! Mit 16-seitigem, voll farbigem Booklet.
+        Voller toller Infos und nicer Illus und Fotos und mit allen Texten zum
+        Mitlesen, einstudieren und mitsingen! Enthält unbegrenztes Streaming von
+        Tyrannopotamus Rex und außerdem den hochwertigen Download als MP3, FLAC
+        und mehr.
+      </p>
       <div
         className={
           article === 1 ? "article-card visible" : "article-card invisible"
@@ -56,9 +74,20 @@ function Carousel() {
           alt="Picture of Album on MC"
           className="mc-img"
         />
-        <p className="article-name">MC</p>
-        <p className="article-description">Beschreibung</p>
+        <p className="article-name">Limitierte Kassette + Digitales Album</p>
       </div>
+      <p
+        className={
+          article === 1
+            ? "article-description visible"
+            : "article-description invisible"
+        }
+      >
+        Alles DIY, soviel Gebastel.... Es ist alles für Dich vorbereitet, nur
+        Spulen musst Du selbst! Enthält unbegrenztes Streaming von
+        Tyrannopotamus Rex und außerdem den hochwertigen Download als MP3, FLAC
+        und mehr.
+      </p>
       <div
         className={
           article === 2 ? "article-card visible" : "article-card invisible"
@@ -66,12 +95,70 @@ function Carousel() {
       >
         <img
           srcSet={`${Lp320} 320w, ${Lp512} 512w`}
-          alt="Picture of Album on MC"
-          className="mc-img"
+          alt="Picture of Album on LP"
+          className="lp-img"
         />
-        <p className="article-name">MC</p>
-        <p className="article-description">Beschreibung</p>
+        <p className="article-name">Fake Platte + Digitales Album</p>
       </div>
+      <p
+        className={
+          article === 2
+            ? "article-description visible"
+            : "article-description invisible"
+        }
+      >
+        Sieht aus wie eine LP, mit tollem Cover und allem Pipapo. Sieht
+        spitzenmäßig aus im Plattenschrank. Ist auch Vinyl drin, aber kein
+        Tyrannopotamus Rex drauf. Nur für Poser. Aber das richtig! Enthält
+        unbegrenztes Streaming von Tyrannopotamus Rex und außerdem den
+        hochwertigen Download als MP3, FLAC und mehr.
+      </p>
+      <div
+        className={
+          article === 3 ? "article-card visible" : "article-card invisible"
+        }
+      >
+        <img
+          srcSet={`${Knapp320} 320w, ${Knapp512} 512w`}
+          alt="Cover EP Knapp"
+          className="knapp-img"
+        />
+        <p className="article-name">Knapp (EP)</p>
+      </div>
+      <p
+        className={
+          article === 3
+            ? "article-description visible"
+            : "article-description invisible"
+        }
+      >
+        Die zweite Single "Knapp" als Special Edition. Enthält unbegrenztes
+        Streaming über die kostenlose Bandcamp-App und außerdem den hochwertigen
+        Download als MP3, FLAC und mehr.
+      </p>
+      <div
+        className={
+          article === 4 ? "article-card visible" : "article-card invisible"
+        }
+      >
+        <img
+          srcSet={`${Heiter320} 320w, ${Heiter512} 512w`}
+          alt="Cover Single Heiter"
+          className="heiter-img"
+        />
+        <p className="article-name">Heiter (Single)</p>
+      </div>
+      <p
+        className={
+          article === 4
+            ? "article-description visible"
+            : "article-description invisible"
+        }
+      >
+        Des Commanders erste Single "Heiter". Enthält unbegrenztes Streaming
+        über die kostenlose Bandcamp-App und außerdem den hochwertigen Download
+        als MP3, FLAC und mehr.
+      </p>
     </div>
   );
 }
@@ -89,7 +176,10 @@ function Shop() {
         </div>
         <Carousel />
         <div>
-          <p>Diese Seite befindet sich noch im Aufbau.</p>
+          <p>All den Nilpfred March und noch viel mehr gibt's in unserem:</p>
+          <a href="https://stereola.bandcamp.com/" className="shop-link">
+            SHOP
+          </a>
         </div>
       </div>
     </>

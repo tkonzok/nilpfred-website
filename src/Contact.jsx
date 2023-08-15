@@ -13,9 +13,9 @@ function Contact() {
     <>
       <div>
         <div className="info-section">
-          <h2 className="span">Contact Us</h2>
+          <h2 className="span">Wir müssen reden?</h2>
           <p className="span">
-            Für Booking- und Autogrammanfragen oder einfach nur Komplimente.
+            Für Booking- und Autogrammanfragen oder einfach nur ein Kompliment:
           </p>
           <p className="span">
             cBernardy Werbung für Commander Nilpfred

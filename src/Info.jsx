@@ -34,7 +34,7 @@ function CardContainer() {
         <p>Bernd</p>
         <p className="instruments">(Gesang und Bass)</p>
       </div>
-      <div className={inView ? "card slide-in from-right delay4" : "card"}>
+      <div className={inView ? "card slide-in from-right delay3" : "card"}>
         <img
           srcSet={`${Jasper100} 100w, ${Jasper200} 200w`}
           alt="Picture of Jasper"
@@ -50,7 +50,7 @@ function CardContainer() {
         <p>Tobi</p>
         <p className="instruments">(Akustikgitarre und Gesang)</p>
       </div>
-      <div className={inView ? "card slide-in from-right delay5" : "card"}>
+      <div className={inView ? "card slide-in from-right delay4" : "card"}>
         <img
           srcSet={`${Felix100} 100w, ${Felix200} 200w`}
           alt="Picture of Felix"
