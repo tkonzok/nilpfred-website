@@ -29,7 +29,7 @@ function App() {
     };
 
     return (
-      <button className="nextPage" onClick={handleClick}>
+      <button className="next-page" onClick={handleClick}>
         <img src={ArrowDown} alt="Arrow Down" className="arrow-down" />
       </button>
     );

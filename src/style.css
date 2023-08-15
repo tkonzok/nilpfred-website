@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
-  --petrol: #64a19d;
-  --petrol-transparent: #64a19d90;
-  --petrol-dark: #325048;
-  --petrol-dark-transparent: #32504890;
-  --petrol: #64a19d;
-  --yellow: #f7ff00;
+  --petrol: #619e9a;
+  --petrol-transparent: #619e9a90;
+  --petrol-dark: hsl(176, 24%, 25%);
+  --petrol-dark-transparent: #304f4d90;
+  --petrol-very-dark: hsl(176, 24%, 15%);
+  --petrol-very-dark-transparent: #1d2f2e90;
+  --yellow-50: #f7ff00;
+  --yellow-55: hsl(62, 100%, 55%);
+  --orange: #c36636;
+  --orange-dark: hsl(20, 57%, 25%);
+  --orange-light: hsl(20, 57%, 65%);
   --navbar-height: 60px;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -25,14 +31,15 @@ body {
 
 #root {
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   background: linear-gradient(
     300deg,
     #00000090,
-    var(--petrol-dark-transparent),
-    var(--petrol-transparent)
+    var(--petrol-very-dark-transparent),
+    var(--petrol-dark-transparent)
   );
   background-size: 180% 180%;
   animation-name: gradient-animation;
@@ -54,12 +61,17 @@ body {
 }
 
 a {
-  transition: transform 0.2s;
   text-decoration: none;
   color: inherit;
 }
 
-a:hover {
+a,
+a > img {
+  transition: transform 0.2s;
+}
+
+a:hover,
+a > img:hover {
   transform: scale(1.1);
 }
 
@@ -90,8 +102,8 @@ nav h2 {
 /* HERO */
 
 .hero-container {
-  width: 100vw;
-  height: 100lvh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,7 +214,7 @@ nav h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--yellow);
+  background-color: var(--yellow-55);
 }
 
 .quotes-container {
@@ -210,7 +222,7 @@ nav h2 {
   margin: auto;
   margin-top: 2rem;
   width: 100%;
-  padding: 0 80px;
+  padding: 0 10vw;
 }
 
 .quotes {
@@ -230,7 +242,7 @@ nav h2 {
 }
 
 .visible {
-  transform: translateY(160px);
+  transform: translateY(3vh);
   opacity: 0;
   animation-name: slide-in-quote;
   animation-duration: 1s;
@@ -257,7 +269,7 @@ nav h2 {
 
 @keyframes slide-out-quote {
   100% {
-    transform: translateY(160px);
+    transform: translateY(3vh);
     opacity: 0;
   }
 }
@@ -266,7 +278,7 @@ nav h2 {
   position: fixed;
   z-index: 100;
   bottom: 5%;
-  right: 5%;
+  left: 45%;
   font-size: 2.5rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -277,8 +289,8 @@ nav h2 {
 
 /* INFO */
 .info-container {
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -289,9 +301,12 @@ nav h2 {
 .info {
   width: 100%;
   height: 100%;
-  padding: 2rem 10vw;
-  display: flex;
-  flex-direction: column;
+  padding: 3rem 10vw 5rem;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: calc((100vh - 8rem) * 0.25) calc((100vh - 8rem) * 0.5) calc(
+      (100vh - 8rem) * 0.25
+    );
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -307,32 +322,68 @@ nav h2 {
   padding: 0.5rem 0;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+.card-container {
+  width: min(100%, 40vh);
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    calc(((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5 - 24px) / 1.29)
+  );
+  grid-template-rows: repeat(2, calc((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5));
+  gap: 1rem 0;
+  justify-content: space-evenly;
+  background-color: var(--petrol-dark-transparent);
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  box-shadow: 2px 2px 10px 2px #000000;
+}
+
+.card {
+  display: grid;
+  border-radius: 8px;
+  background-color: var(--orange-dark);
+  grid-template-columns: 1fr;
+  grid-template-rows: calc((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5 - 24px) 24px 0;
+}
+
+.card > img {
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: auto;
+  object-fit: cover;
+}
+
+.card > p {
+  margin: auto;
+  padding: auto;
+}
+
+.instruments {
+  opacity: 0;
 }
 
 .bandinfo-pdf {
-  background-color: var(--yellow);
+  background-color: var(--yellow-55);
   color: #000;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin-bottom: 1rem;
   border: 2px solid #000;
   box-shadow:
     10px 0 10px 0 #00000070,
     10px 0 10px 0 #00000040;
   text-transform: uppercase;
-  letter-spacing: 0.25rem;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 0.6rem;
   text-align: center;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 /* MUSIC */
 .music-container {
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,7 +414,7 @@ iframe {
 
 /* SHOP */
 .shop-container {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -385,8 +436,8 @@ iframe {
 
 /* CONTACT */
 .contact-container {
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -462,9 +513,15 @@ iframe {
 
   .quotes-container {
     margin-top: 4rem;
+    padding: 0 80px;
   }
 
   /* INFO */
+
+  .bandinfo-pdf {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 
   /* MUSIC */
 
