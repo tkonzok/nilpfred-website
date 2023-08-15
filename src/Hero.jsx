@@ -138,6 +138,7 @@ function Hero() {
             <BandImage />
           </div>
         </div>
+        <div className="logo"></div>
         <div className="links-container">
           <Links />
         </div>

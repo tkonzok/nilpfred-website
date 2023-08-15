@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #000;
-  background-image: url("./assets/images/logo_1920.png");
+  background-image: url("./assets/images/logo_512.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
@@ -28,6 +28,29 @@ body {
   overflow: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  background: linear-gradient(
+    300deg,
+    #00000090,
+    var(--petrol-dark-transparent),
+    var(--petrol-transparent)
+  );
+  background-size: 180% 180%;
+  animation-name: gradient-animation;
+  animation-duration: 30s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 a {
@@ -81,38 +104,15 @@ nav h2 {
   height: 100%;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 50lvh 25lvh 25lvh;
+  grid-template-rows: 40lvh 25lvh 48px auto;
   align-items: center;
   text-align: center;
-  background: linear-gradient(
-    300deg,
-    #00000090,
-    var(--petrol-dark-transparent),
-    var(--petrol-transparent)
-  );
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .band-img-container-wrap {
   margin-left: auto;
-  padding: 10vw;
-  padding-left: 0;
+  height: 100%;
+  padding: 8lvh 12vw 0 0;
   perspective: 370px;
   transform-style: preserve-3d;
 }
@@ -123,7 +123,7 @@ nav h2 {
 
 .band-img {
   box-shadow: 2px 2px 10px 2px #000000;
-  height: min(50vw, 40lvh, 216px);
+  height: min(60vw, 30lvh);
 }
 
 .slide-in {
@@ -147,31 +147,31 @@ nav h2 {
 }
 
 .delay1 {
-  animation-delay: 4s;
+  animation-delay: 1s;
 }
 
 .delay2 {
-  animation-delay: 5s;
+  animation-delay: 2s;
 }
 
 .delay3 {
-  animation-delay: 5.5s;
+  animation-delay: 2.25s;
 }
 
 .delay4 {
-  animation-delay: 6s;
+  animation-delay: 2.5s;
 }
 
 .delay5 {
-  animation-delay: 6.5s;
+  animation-delay: 2.75s;
 }
 
 .delay6 {
-  animation-delay: 7s;
+  animation-delay: 3s;
 }
 
 .delay7 {
-  animation-delay: 8s;
+  animation-delay: 4s;
 }
 
 @keyframes slide-in {
@@ -185,8 +185,7 @@ nav h2 {
 .links-container {
   height: 48px;
   background-color: #00000000;
-  margin: auto;
-  margin-bottom: 8px;
+  margin: 0 auto;
 }
 
 .links-container > .links {
@@ -209,8 +208,9 @@ nav h2 {
 .quotes-container {
   position: relative;
   margin: auto;
-  margin-top: 1rem;
-  width: min(80vw, 512px);
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 80px;
 }
 
 .quotes {
@@ -289,13 +289,7 @@ nav h2 {
 .info {
   width: 100%;
   height: 100%;
-  background: linear-gradient(300deg, #00000090, #50500090, #90900090);
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  padding: 0 10vw;
+  padding: 2rem 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -349,13 +343,7 @@ ul {
 .music-container > div {
   width: 100%;
   height: 100%;
-  background: linear-gradient(300deg, #00000090, #00005090, #00009090);
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  padding: 0 10vw;
+  padding: 2rem 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -387,13 +375,7 @@ iframe {
 .shop-container > div {
   width: 100%;
   height: 100%;
-  background: linear-gradient(300deg, #00000090, #50005090, #90009090);
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  padding: 0 10vw;
+  padding: 2rem 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -415,17 +397,6 @@ iframe {
 .contact-container > div {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    300deg,
-    #00000090,
-    var(--petrol-dark-transparent),
-    var(--petrol-transparent)
-  );
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
   padding: 2rem 10vw;
   display: flex;
   flex-direction: column;
@@ -455,18 +426,31 @@ iframe {
 
 /* REG MOBILE */
 @media (min-width: 512px) {
+  body {
+    background-image: url("./assets/images/logo_768.png");
+    background-size: 600px;
+  }
   /* NAV */
 
   /* HERO */
+  .hero {
+    grid-template-rows: calc((100lvh - 220px) * 0.5) 0px 220px calc(
+        (100lvh - 220px) * 0.5
+      );
+  }
+
+  .band-img-container-wrap {
+  }
+
   .band-img {
-    height: min(50vw, 30lvh, 320px);
+    height: calc((100lvh - 220px) * 0.4);
   }
 
   .links-container {
     height: auto;
     width: 64px;
     margin-bottom: 0;
-    margin-top: -15lvh;
+    margin-top: 0lvh;
     margin-left: 8px;
     margin-right: auto;
   }
@@ -474,6 +458,10 @@ iframe {
   .links-container > .links {
     grid-template-columns: 100%;
     grid-template-rows: repeat(5, 64px);
+  }
+
+  .quotes-container {
+    margin-top: 4rem;
   }
 
   /* INFO */
