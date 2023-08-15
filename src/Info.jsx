@@ -13,6 +13,55 @@ import Jasper100 from "./assets/images/jasper_100.jpg";
 import Tobi200 from "./assets/images/tobi_200.jpg";
 import Tobi100 from "./assets/images/tobi_100.jpg";
 
+function CardContainer() {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
+  return (
+    <div
+      className={
+        inView ? "card-container slide-in from-left delay1" : "card-container"
+      }
+      ref={ref}
+    >
+      <div className={inView ? "card slide-in from-right delay2" : "card"}>
+        <img
+          srcSet={`${Bernd100} 100w, ${Bernd200} 200w`}
+          alt="Picture of Bernd"
+        ></img>
+        <p>Bernd</p>
+        <p className="instruments">(Gesang und Bass)</p>
+      </div>
+      <div className={inView ? "card slide-in from-right delay4" : "card"}>
+        <img
+          srcSet={`${Jasper100} 100w, ${Jasper200} 200w`}
+          alt="Picture of Jasper"
+        ></img>
+        <p>Jasper</p>
+        <p className="instruments">(Schlagzeug und Gesang)</p>
+      </div>
+      <div className={inView ? "card slide-in from-right delay3" : "card"}>
+        <img
+          srcSet={`${Tobi100} 100w, ${Tobi200} 200w`}
+          alt="Picture of Tobi"
+        ></img>
+        <p>Tobi</p>
+        <p className="instruments">(Akustikgitarre und Gesang)</p>
+      </div>
+      <div className={inView ? "card slide-in from-right delay5" : "card"}>
+        <img
+          srcSet={`${Felix100} 100w, ${Felix200} 200w`}
+          alt="Picture of Felix"
+        ></img>
+        <p>Felix</p>
+        <p className="instruments">(E-Gitarre und Gesang)</p>
+      </div>
+    </div>
+  );
+}
+
 function Info() {
   return (
     <>
@@ -26,39 +75,8 @@ function Info() {
             sind:
           </p>
         </div>
-        <div className="card-container">
-          <div className="card">
-            <img
-              srcSet={`${Bernd100} 100w, ${Bernd200} 200w`}
-              alt="Picture of Bernd"
-            ></img>
-            <p>Bernd</p>
-            <p className="instruments">(Gesang und Bass)</p>
-          </div>
-          <div className="card">
-            <img
-              srcSet={`${Jasper100} 100w, ${Jasper200} 200w`}
-              alt="Picture of Jasper"
-            ></img>
-            <p>Jasper</p>
-            <p className="instruments">(Schlagzeug und Gesang)</p>
-          </div>
-          <div className="card">
-            <img
-              srcSet={`${Tobi100} 100w, ${Tobi200} 200w`}
-              alt="Picture of Tobi"
-            ></img>
-            <p>Tobi</p>
-            <p className="instruments">(Akustikgitarre und Gesang)</p>
-          </div>
-          <div className="card">
-            <img
-              srcSet={`${Felix100} 100w, ${Felix200} 200w`}
-              alt="Picture of Felix"
-            ></img>
-            <p>Felix</p>
-            <p className="instruments">(E-Gitarre und Gesang)</p>
-          </div>
+        <div className="card-container-wrapper">
+          <CardContainer />
         </div>
         <div>
           <p>
