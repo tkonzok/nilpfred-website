@@ -845,37 +845,85 @@ body {
   font-size: min(4vw, 2vh, 2rem);
 }
 /* HERO */
+@media (min-width: 1024px) and (min-aspect-ratio: 1) {
+  .band-img-container-wrap {
+    padding: 8lvh 4vw 0 0;
+  }
+
+  .band-img-container {
+    transform: rotateY(-10deg);
+  }
+
+  .band-img {
+    height: min(calc((100lvh - 220px) * 0.48), 35vw);
+  }
+
+  .links-container {
+    margin-left: 10vw;
+  }
+
+  .links-container > .links {
+    gap: 16px;
+  }
+
+  .quotes-container {
+    width: min(70%, 720px);
+  }
+
+  .quote {
+    font-size: min(4vw, 2vh, 2rem);
+  }
+
+  .quote > p {
+    font-size: min(3vw, 1.5vh, 1.5rem);
+  }
+
+  .arrow-down {
+    bottom: 8%;
+  }
+}
 
 /* INFO */
 @media (min-width: 1024px) and (min-aspect-ratio: 1) {
   .cards-container {
     width: min(900px, 75vw);
     grid-template-columns: repeat(4, calc(min(75vw, 900px) * 0.2));
-    grid-template-rows: calc(min(75vw, 900px) * 0.23 * 1.29 + 48px);
+    grid-template-rows: min(
+      calc((100vh - 8rem) * 0.5),
+      calc(min(75vw, 900px) * 0.23 * 1.29 + 48px)
+    );
     gap: 0;
+  }
+
+  .card-container {
+    display: flex;
+  }
+
+  .card {
+    margin: auto;
+    height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
+  }
+
+  .card-front,
+  .card-back {
+    width: calc(min(75vw, 900px) * 0.2);
+    height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
+    grid-template-rows: calc(100% - 48px) 48px;
+  }
+
+  .instruments {
+    font-size: min(4vw, 2vh, 2rem);
   }
 }
 
-.card-container {
-  display: flex;
-}
-
-.card {
-  margin: auto;
-  height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
-}
-
-.card-front,
-.card-back {
-  width: calc(min(75vw, 900px) * 0.2);
-  height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
-  grid-template-rows: calc(100% - 48px) 48px;
-}
-
 /* MUSIC */
-@media (min-width: 1024px) and (min-aspect-ratio: 1) {
+@media (min-width: 1024px) {
   .album-img-container-wrap {
     margin: 1rem auto 1rem 6vw;
+  }
+
+  iframe {
+    max-width: 80%;
   }
 }
 
@@ -894,8 +942,8 @@ body {
   }
 
   .article-card {
-    width: min(50vw, 60vh);
-    height: min(50vw, 60vh) 36px;
+    grid-template-columns: min(50vw, 60vh);
+    grid-template-rows: min(50vw, 60vh) 36px;
     z-index: 200;
   }
 
@@ -904,11 +952,12 @@ body {
     width: min(70%, 25vw);
     left: calc(100% + 2vw);
     margin: 5%;
+    font-size: min(4vw, 2vh, 2rem);
   }
 
-  .link-to-show {
+  .link-to-shop {
     position: absolute;
-    bottom: 20%;
+    bottom: 16%;
     left: calc(15vw + min(50vw, 60vh) + 4%);
     z-index: 300;
     width: 280px;
