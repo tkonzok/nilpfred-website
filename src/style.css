@@ -35,7 +35,6 @@ body {
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overscroll-behavior: contain;
   background: linear-gradient(
     300deg,
     #00000090,
@@ -77,71 +76,31 @@ a > img:hover {
 }
 
 .arrow-up {
-  position: fixed;
-  z-index: 100;
-  bottom: 5%;
-  left: 85%;
-  font-size: 2.5rem;
   width: 2.5rem;
   height: 2.5rem;
+  position: fixed;
+  z-index: 200;
+  bottom: 5%;
+  left: 85%;
   cursor: pointer;
   border: none;
   background-color: #00000000;
+  font-size: 2.5rem;
   opacity: 0;
-  animation-name: arrow-turning;
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.arrow-up.shown {
+  animation-name: arrow-shown;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
-@keyframes arrow-turning {
+@keyframes arrow-shown {
   100% {
     opacity: 1;
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-  }
-}
-
-.arrow-down {
-  position: fixed;
-  z-index: 100;
-  bottom: 5%;
-  left: 85%;
-  font-size: 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-  border: none;
-  background-color: #00000000;
-  opacity: 1;
-  transform: translateY(-1vh);
-  animation-name: pulsing;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes pulsing {
-  0% {
-    opacity: 0;
-    transform: translateY(-1vh);
-  }
-  30% {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
-  60% {
-    opacity: 0;
-    transform: translateY(1vh);
-  }
-  80% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -339,6 +298,44 @@ nav h2 {
   100% {
     transform: translateY(3vh);
     opacity: 0;
+  }
+}
+
+.arrow-down {
+  position: fixed;
+  z-index: 100;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: #00000000;
+  opacity: 0;
+}
+
+.arrow-down.shown {
+  opacity: 1;
+  transform: translateY(-1vh);
+  animation-name: pulsing;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 0;
+    transform: translateY(-1vh);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1vh);
   }
 }
 

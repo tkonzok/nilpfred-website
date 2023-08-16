@@ -14,23 +14,16 @@ function App() {
 
   function Arrow() {
     const handleClick = () => {
-      console.log(inView);
       const firstPage = document.querySelector(".hero-container");
-      const secondPage = document.querySelector(".info");
-      if (inView) {
-        secondPage.scrollIntoView({ behavior: "smooth" });
-      } else {
-        firstPage.scrollIntoView({ behavior: "smooth" });
-      }
+      firstPage.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-      <button className="next-page" onClick={handleClick}>
-        <img
-          src={ArrowDown}
-          alt="Arrow"
-          className={inView ? "arrow-down" : "arrow-up"}
-        />
+      <button
+        className={inView ? "arrow-up" : "arrow-up shown"}
+        onClick={handleClick}
+      >
+        <img src={ArrowDown} alt="Arrow" />
       </button>
     );
   }

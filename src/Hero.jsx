@@ -97,7 +97,7 @@ function Quotes() {
   return (
     <div
       ref={ref}
-      className={inView ? "quotes slide-in from-bottom delay7" : "quotes"}
+      className={inView ? "quotes slide-in from-bottom delay1" : "quotes"}
     >
       <div className={quote === 0 ? "quote visible" : "quote invisible"}>
         <em>
@@ -135,6 +135,19 @@ function Quotes() {
   );
 }
 
+function ArrowDownPulse() {
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
+
+  return (
+    <img
+      ref={ref}
+      src={ArrowDown}
+      alt="Arrow"
+      className={inView ? "arrow-down shown" : "arrow-down"}
+    />
+  );
+}
+
 function Hero() {
   return (
     <>
@@ -151,6 +164,7 @@ function Hero() {
         <div className="quotes-container">
           <Quotes />
         </div>
+        <ArrowDownPulse />
       </div>
     </>
   );
