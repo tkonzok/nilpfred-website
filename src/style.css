@@ -75,6 +75,56 @@ a > img:hover {
   transform: scale(1.1);
 }
 
+.arrow-up {
+  position: fixed;
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  z-index: 100;
+  bottom: 5%;
+  left: 85%;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #00000000;
+  opacity: 1;
+}
+
+.arrow-down {
+  position: fixed;
+  z-index: 100;
+  bottom: 5%;
+  left: 85%;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #00000000;
+  opacity: 1;
+  transform: translateY(-1vh);
+  animation-name: pulsing;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 0;
+    transform: translateY(-1vh);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1vh);
+  }
+}
+
 /* SMALL MOBILE */
 /* NAV */
 
@@ -110,6 +160,7 @@ nav h2 {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .hero {
@@ -271,40 +322,6 @@ nav h2 {
   }
 }
 
-.arrow-down {
-  position: fixed;
-  z-index: 100;
-  bottom: 5%;
-  left: 85%;
-  font-size: 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-  border: none;
-  background-color: #00000000;
-  opacity: 1;
-  transform: translateY(-1vh);
-  animation-name: pulsing;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes pulsing {
-  0% {
-    opacity: 0;
-    transform: translateY(-1vh);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(1vh);
-  }
-}
-
 /* INFO */
 .info-container {
   width: 100%;
@@ -315,6 +332,7 @@ nav h2 {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .info {
@@ -373,14 +391,16 @@ nav h2 {
   transform-style: preserve-3d;
 }
 
-.card-container:hover .card {
+.card-container:hover .card,
+.card-container:active .card,
+.card-container:focus .card {
   transform: rotateY(-180deg);
 }
 
 .card-container.show-flip .card {
   animation-name: show-flip;
   animation-duration: 1s;
-  animation-delay: 6s;
+  animation-delay: 5s;
   animation-timing-function: ease-in-out;
 }
 
@@ -402,7 +422,7 @@ nav h2 {
 .card-container.flip-once .card {
   animation-name: flip-once;
   animation-duration: 4s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-timing-function: ease-in-out;
 }
 
@@ -502,6 +522,7 @@ nav h2 {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .music-container > div {
@@ -568,6 +589,7 @@ iframe {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .shop-container > div {
@@ -714,6 +736,7 @@ iframe {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .contact-container > div {

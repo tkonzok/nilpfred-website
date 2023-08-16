@@ -10,27 +10,27 @@ import Contact from "./Contact.jsx";
 import ArrowDown from "./assets/icons/arrow-down.svg";
 
 function App() {
-  const { ref1, inView1 } = useInView({ threshold: 0 });
-  const { ref2, inView2 } = useInView({ threshold: 0 });
-  const [activeSection, setActiveSection] = useState(1);
+  const { ref, inView } = useInView({ threshold: 0.5 });
 
-  useEffect(() => {
-    if (inView1) setActiveSection(1);
-    if (inView2) setActiveSection(2);
-  }, [inView1, inView2]);
-
-  const ref = useRef(null);
-  const noRef = useRef(null);
-
-  function NextPage() {
+  function Arrow() {
     const handleClick = () => {
-      ref.current?.scrollIntoView({ behavior: "smooth" });
-      console.log(activeSection);
+      console.log(inView);
+      const firstPage = document.querySelector(".hero-container");
+      const secondPage = document.querySelector(".info");
+      if (inView) {
+        secondPage.scrollIntoView({ behavior: "smooth" });
+      } else {
+        firstPage.scrollIntoView({ behavior: "smooth" });
+      }
     };
 
     return (
       <button className="next-page" onClick={handleClick}>
-        <img src={ArrowDown} alt="Arrow Down" className="arrow-down" />
+        <img
+          src={ArrowDown}
+          alt="Arrow"
+          className={inView ? "arrow-down" : "arrow-up"}
+        />
       </button>
     );
   }
@@ -38,18 +38,12 @@ function App() {
   return (
     <>
       <Nav />
-      <NextPage />
-      <section
-        className="hero-container"
-        ref={activeSection === 2 ? { ref, ref1 } : { ref1 }}
-      >
+      <Arrow />
+      <section className="hero-container" ref={ref}>
         <Hero />
       </section>
 
-      <section
-        className="info-container"
-        ref={activeSection === 1 ? { ref, ref2 } : { ref2 }}
-      >
+      <section className="info-container">
         <Info />
       </section>
 
