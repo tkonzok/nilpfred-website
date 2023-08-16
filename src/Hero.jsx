@@ -120,10 +120,9 @@ function Quotes() {
       </div>
       <div className={quote === 3 ? "quote visible" : "quote invisible"}>
         <em>
-          „Commander Nilpfred. Ja, die heißen wirklich Nil-PFRED. Fick das
-          System. Super Song.”
+          „Ja, die heißen wirklich NilPFRED. Fick das System. Super Song.”
         </em>
-        <p>(Olli Schulz, Fest & Flauschig, "Der Asi und der Schwabe")</p>
+        <p>(Olli Schulz. Fest & Flauschig. "Der Asi und der Schwabe")</p>
       </div>
       <div className={quote === 4 ? "quote visible" : "quote invisible"}>
         <em>

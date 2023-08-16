@@ -163,10 +163,6 @@ function Shop() {
       <div>
         <div className="shop-headline">
           <h2>Commercial Nilpfred</h2>
-          <p>
-            Anzuhören gibt es den T-Rex analog auf CD und MC. Oder digital als
-            Fake-LP und auf den üblichen Kanälen.
-          </p>
         </div>
         <Carousel />
         <div>
