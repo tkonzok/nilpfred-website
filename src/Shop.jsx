@@ -166,7 +166,7 @@ function Shop() {
           <p>Du willst uns doch sicherlich supporten:</p>
         </div>
         <Carousel />
-        <div>
+        <div className="link-to-shop">
           <p>All den Nilpfred Merch und noch viel mehr gibt's in unserem:</p>
           <a href="https://stereola.bandcamp.com/" className="shop-link">
             SHOP

@@ -79,7 +79,7 @@ function Quotes() {
     triggerOnce: true,
   });
 
-  const [quote, setQuote] = useState(5);
+  const [quote, setQuote] = useState(4);
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
