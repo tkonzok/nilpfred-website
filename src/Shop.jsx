@@ -163,6 +163,7 @@ function Shop() {
       <div>
         <div className="shop-headline">
           <h2>Commercial Nilpfred</h2>
+          <p>Du willst uns doch sicherlich supporten:</p>
         </div>
         <Carousel />
         <div>

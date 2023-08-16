@@ -22,41 +22,93 @@ function CardContainer() {
   return (
     <div
       className={
-        inView ? "card-container slide-in from-left delay1" : "card-container"
+        inView ? "cards-container slide-in from-left delay1" : "cards-container"
       }
       ref={ref}
     >
-      <div className={inView ? "card slide-in from-right delay2" : "card"}>
-        <img
-          srcSet={`${Bernd100} 100w, ${Bernd200} 200w`}
-          alt="Picture of Bernd"
-        ></img>
-        <p>Bernd</p>
-        <p className="instruments">(Gesang und Bass)</p>
+      <div
+        className={
+          inView
+            ? "card-container slide-in from-right delay2 show-flip"
+            : "card-container"
+        }
+      >
+        <div className="card">
+          <div className="card-front">
+            <img
+              srcSet={`${Bernd100} 100w, ${Bernd200} 200w`}
+              alt="Picture of Bernd"
+            ></img>
+            <p>Bernd</p>
+          </div>
+          <div className="card-back">
+            <p className="instruments">Gesang und Bass</p>
+            <p>Bernd</p>
+          </div>
+        </div>
       </div>
-      <div className={inView ? "card slide-in from-right delay3" : "card"}>
-        <img
-          srcSet={`${Jasper100} 100w, ${Jasper200} 200w`}
-          alt="Picture of Jasper"
-        ></img>
-        <p>Jasper</p>
-        <p className="instruments">(Schlagzeug und Gesang)</p>
+      <div
+        className={
+          inView
+            ? "card-container slide-in from-right delay3 show-flip"
+            : "card-container"
+        }
+      >
+        <div className="card">
+          <div className="card-front">
+            <img
+              srcSet={`${Jasper100} 100w, ${Jasper200} 200w`}
+              alt="Picture of Jasper"
+            ></img>
+            <p>Jasper</p>
+          </div>
+          <div className="card-back">
+            <p className="instruments">Schlagzeug und Gesang</p>
+            <p>Jasper</p>
+          </div>
+        </div>
       </div>
-      <div className={inView ? "card slide-in from-right delay3" : "card"}>
-        <img
-          srcSet={`${Tobi100} 100w, ${Tobi200} 200w`}
-          alt="Picture of Tobi"
-        ></img>
-        <p>Tobi</p>
-        <p className="instruments">(Akustikgitarre und Gesang)</p>
+      <div
+        className={
+          inView
+            ? "card-container slide-in from-right delay3 show-flip"
+            : "card-container"
+        }
+      >
+        <div className="card">
+          <div className="card-front">
+            <img
+              srcSet={`${Tobi100} 100w, ${Tobi200} 200w`}
+              alt="Picture of Tobi"
+            ></img>
+            <p>Tobi</p>
+          </div>
+          <div className="card-back">
+            <p className="instruments">Akustikgitarre und Gesang</p>
+            <p>Tobi</p>
+          </div>
+        </div>
       </div>
-      <div className={inView ? "card slide-in from-right delay4" : "card"}>
-        <img
-          srcSet={`${Felix100} 100w, ${Felix200} 200w`}
-          alt="Picture of Felix"
-        ></img>
-        <p>Felix</p>
-        <p className="instruments">(E-Gitarre und Gesang)</p>
+      <div
+        className={
+          inView
+            ? "card-container slide-in from-right delay4 flip-once"
+            : "card-container"
+        }
+      >
+        <div className="card">
+          <div className="card-front">
+            <img
+              srcSet={`${Felix100} 100w, ${Felix200} 200w`}
+              alt="Picture of Felix"
+            ></img>
+            <p>Felix</p>
+          </div>
+          <div className="card-back">
+            <p className="instruments">E-Gitarre und Gesang</p>
+            <p>Felix</p>
+          </div>
+        </div>
       </div>
     </div>
   );
