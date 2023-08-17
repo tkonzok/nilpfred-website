@@ -394,8 +394,6 @@ nav h3 {
   justify-content: center;
   align-items: center;
   color: #fff;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .info {
@@ -411,6 +409,8 @@ nav h3 {
   align-items: center;
   text-align: center;
   font-size: min(3.5vw, 1.5vh, 1.5rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .info > h2 {
@@ -589,8 +589,6 @@ nav h3 {
   justify-content: center;
   align-items: center;
   color: #fff;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .music-container > div {
@@ -603,6 +601,8 @@ nav h3 {
   align-items: center;
   text-align: center;
   font-size: min(3.5vw, 1.5vh, 1.5rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .album-img-container-wrap {
@@ -655,8 +655,6 @@ iframe {
   justify-content: center;
   align-items: center;
   color: #fff;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .shop-container > div {
@@ -671,6 +669,8 @@ iframe {
   justify-content: center;
   align-items: center;
   text-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .carousel {
@@ -816,8 +816,6 @@ iframe {
   justify-content: center;
   align-items: center;
   color: #fff;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .contact-container > div {
@@ -828,6 +826,8 @@ iframe {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .info-section {
