@@ -401,11 +401,11 @@ nav h3 {
 .info {
   width: min(1440px, 100%);
   height: 100%;
-  padding: 3rem 10vw 5rem;
+  padding: 5rem 10vw 5rem;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: calc((100vh - 8rem) * 0.25) calc((100vh - 8rem) * 0.5) calc(
-      (100vh - 8rem) * 0.25
+  grid-template-rows: calc((100vh - 10rem) * 0.25) calc((100vh - 10rem) * 0.5) calc(
+      (100vh - 10rem) * 0.25
     );
   justify-content: center;
   align-items: center;
@@ -428,9 +428,9 @@ nav h3 {
   display: grid;
   grid-template-columns: repeat(
     2,
-    calc(((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5 - min(6vh, 36px)) / 1.29)
+    calc(((((100vh - 10rem) * 0.5) - 1.5rem) * 0.5 - min(6vh, 36px)) / 1.29)
   );
-  grid-template-rows: repeat(2, calc((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5));
+  grid-template-rows: repeat(2, calc((((100vh - 10rem) * 0.5) - 1.5rem) * 0.5));
   gap: 1rem 0;
   justify-content: space-evenly;
   background-color: var(--petrol-dark-transparent);
@@ -524,7 +524,7 @@ nav h3 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows:
-    calc((((100vh - 8rem) * 0.5) - 1.5rem) * 0.5 - min(6vh, 36px))
+    calc((((100vh - 10rem) * 0.5) - 1.5rem) * 0.5 - min(6vh, 36px))
     min(6vh, 36px);
   border-radius: 8px;
   background-color: var(--orange-dark);
@@ -596,7 +596,7 @@ nav h3 {
 .music-container > div {
   width: min(1440px, 100%);
   height: 100%;
-  padding: 3rem 10vw 5rem;
+  padding: 5rem 10vw 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -662,11 +662,11 @@ iframe {
 .shop-container > div {
   width: min(1440px, 100%);
   height: 100%;
-  padding: 3rem 10vw 5rem;
+  padding: 5rem 10vw 5rem;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: calc((100vh - 8rem) * 0.18) calc((100vh - 8rem) * 0.65) calc(
-      (100vh - 8rem) * 0.17
+  grid-template-rows: calc((100vh - 10rem) * 0.18) calc((100vh - 10rem) * 0.65) calc(
+      (100vh - 10rem) * 0.17
     );
   justify-content: center;
   align-items: center;
@@ -817,12 +817,13 @@ iframe {
   align-items: center;
   color: #fff;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .contact-container > div {
   width: min(1440px, 100%);
   height: 100%;
-  padding: 3rem 10vw 3rem;
+  padding: 5rem 10vw 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -850,6 +851,14 @@ iframe {
 .live-img {
   height: 30vh;
   object-fit: cover;
+}
+
+/* BUFFER */
+
+.buffer {
+  width: 100%;
+  height: 300px;
+  background-color: #00000000;
 }
 
 /* REG MOBILE */
@@ -1018,7 +1027,7 @@ iframe {
     width: min(900px, 75vw, 120vh);
     grid-template-columns: repeat(4, calc(min(75vw, 120vh, 900px) * 0.2));
     grid-template-rows: min(
-      calc((100vh - 8rem) * 0.5 - 2rem),
+      calc((100vh - 10rem) * 0.5 - 2rem),
       calc(min(75vw, 120vh, 900px) * 0.23 * 1.29 + min(6vh, 48px))
     );
     gap: 0;
@@ -1032,7 +1041,7 @@ iframe {
     margin: auto;
     height: min(
       calc(min(75vw, 120vh, 900px) * 0.2 * 1.29 + min(6vh, 48px)),
-      calc((100vh - 8rem) * 0.5 - 2rem)
+      calc((100vh - 10rem) * 0.5 - 2rem)
     );
   }
 
