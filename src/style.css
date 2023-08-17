@@ -134,6 +134,7 @@ nav {
   margin: 0 calc(50% - min(720px, 50%));
   padding: 0 min(10vw, 144px);
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #00000000;
   color: #fff;
@@ -152,10 +153,18 @@ nav {
     opacity: 1;
   }
 }
-
 nav h3 {
   margin-right: auto;
   font-size: 1em;
+  position: absolute;
+  opacity: 0;
+}
+
+@media (min-width: 512px) {
+  nav h3 {
+    position: initial;
+    opacity: 1;
+  }
 }
 
 /* HERO */
@@ -401,6 +410,7 @@ nav h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
 }
 
 .info > h2 {
@@ -683,6 +693,7 @@ iframe {
   position: absolute;
   top: 0;
   width: 100%;
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
 }
 
 .visible.article-card {
@@ -822,6 +833,7 @@ iframe {
   grid-template-columns: 40px 1fr;
   text-align: left;
   align-items: center;
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
 }
 
 .span {
@@ -875,6 +887,10 @@ iframe {
 
   /* INFO */
 
+  .info {
+    font-size: min(3.5vw, 1.75vh, 1.5rem);
+  }
+
   .bandinfo-pdf {
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -884,7 +900,15 @@ iframe {
 
   /* SHOP */
 
+  .article-card {
+    font-size: min(3.5vw, 1.75vh, 1.5rem);
+  }
+
   /* CONTACT */
+
+  .info-section {
+    font-size: min(3.5vw, 1.75vh, 1.5rem);
+  }
 }
 
 /* TABLET + DESKTOP */
