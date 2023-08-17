@@ -76,6 +76,7 @@ a > img:hover {
 }
 
 .arrow-up {
+  opacity: 0;
   width: 2.5rem;
   height: 2.5rem;
   position: fixed;
@@ -114,9 +115,6 @@ a > img:hover {
 }
 
 @keyframes arrow-not-shown {
-  0% {
-    opacity: 1;
-  }
   100% {
     opacity: 0;
   }
@@ -151,7 +149,8 @@ nav h2 {
 .hero-container {
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,7 +366,8 @@ nav h2 {
 .info-container {
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -559,7 +559,8 @@ nav h2 {
 .music-container {
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -623,7 +624,8 @@ iframe {
 .shop-container {
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -775,12 +777,13 @@ iframe {
 .contact-container {
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   scroll-snap-stop: always;
 }
 
