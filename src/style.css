@@ -789,7 +789,7 @@ iframe {
 @media (min-width: 512px) {
   body {
     background-image: url("./assets/images/logo_768.png");
-    background-size: 600px;
+    background-size: min(80vh, 600px);
   }
   /* NAV */
 
@@ -855,7 +855,7 @@ body {
   }
 
   .band-img {
-    height: min(calc((100lvh - 220px) * 0.48), 35vw);
+    height: max(360px, min(calc((100lvh - 220px) * 0.48), 35vw));
   }
 
   .links-container {
@@ -886,11 +886,11 @@ body {
 /* INFO */
 @media (min-width: 1024px) and (min-aspect-ratio: 1) {
   .cards-container {
-    width: min(900px, 75vw);
-    grid-template-columns: repeat(4, calc(min(75vw, 900px) * 0.2));
+    width: min(900px, 75vw, 120vh);
+    grid-template-columns: repeat(4, calc(min(75vw, 120vh, 900px) * 0.2));
     grid-template-rows: min(
-      calc((100vh - 8rem) * 0.5),
-      calc(min(75vw, 900px) * 0.23 * 1.29 + 48px)
+      calc((100vh - 8rem) * 0.5 - 2rem),
+      calc(min(75vw, 120vh, 900px) * 0.23 * 1.29 + min(6vh, 48px))
     );
     gap: 0;
   }
@@ -901,14 +901,23 @@ body {
 
   .card {
     margin: auto;
-    height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
+    height: min(
+      calc(min(75vw, 120vh, 900px) * 0.2 * 1.29 + min(6vh, 48px)),
+      calc((100vh - 8rem) * 0.5 - 2rem)
+    );
   }
 
   .card-front,
   .card-back {
-    width: calc(min(75vw, 900px) * 0.2);
-    height: calc(min(75vw, 900px) * 0.2 * 1.29 + 48px);
-    grid-template-rows: calc(100% - 48px) 48px;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: calc(100% - min(6vh, 48px)) min(6vh, 48px);
+  }
+
+  .card-front > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .instruments {
@@ -920,6 +929,11 @@ body {
 @media (min-width: 1024px) {
   .album-img-container-wrap {
     margin: 1rem auto 1rem 6vw;
+    perspective: 530px;
+  }
+
+  .album-img {
+    width: min(30vw, 35vh, 512px);
   }
 
   iframe {
@@ -930,7 +944,6 @@ body {
 /* SHOP */
 @media (min-width: 1024px) and (min-aspect-ratio: 1) {
   .shop-container > div {
-    grid-template-rows: calc((100vh - 8rem) * 0.15) calc((100vh - 8rem) * 0.85);
     position: relative;
   }
 
@@ -948,17 +961,18 @@ body {
   }
 
   .article-description {
-    top: 10%;
+    top: min(5vw, 10%);
     width: min(70%, 25vw);
-    left: calc(100% + 2vw);
-    margin: 5%;
+    left: calc(
+      (min(50vw, 60vh) - min(70%, 25vw) * 0.5) + (43.5vw - min(25vw, 30vh))
+    );
     font-size: min(4vw, 2vh, 2rem);
   }
 
   .link-to-shop {
     position: absolute;
-    bottom: 16%;
-    left: calc(15vw + min(50vw, 60vh) + 4%);
+    top: min(70%, 55vw);
+    right: calc(((85vw - min(50vw, 60vh)) * 0.5) - 140px);
     z-index: 300;
     width: 280px;
   }
