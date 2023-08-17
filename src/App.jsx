@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      {!inView && <Nav />}
       <section className="hero-container" ref={ref}>
         <Hero />
       </section>

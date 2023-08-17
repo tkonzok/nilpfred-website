@@ -8,11 +8,11 @@ import BandImg512 from "./assets/images/band-img_512.jpg";
 import BandImg768 from "./assets/images/band-img_768.jpg";
 import BandImg1024 from "./assets/images/band-img_1024.jpg";
 import BandImg2048 from "./assets/images/band-img_2048.jpg";
-import Dollar from "./assets/icons/dollar.svg";
-import Music from "./assets/icons/music.svg";
-import Facebook from "./assets/icons/facebook.svg";
-import Instagram from "./assets/icons/instagram.svg";
-import Youtube from "./assets/icons/youtube.svg";
+import Music from "./assets/icons/music_white.svg";
+import Dollar from "./assets/icons/dollar_white.svg";
+import Facebook from "./assets/icons/facebook_white.svg";
+import Instagram from "./assets/icons/instagram_white.svg";
+import Youtube from "./assets/icons/youtube_white.svg";
 import ArrowDown from "./assets/icons/arrow-down.svg";
 
 function BandImage() {
