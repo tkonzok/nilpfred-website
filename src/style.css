@@ -602,6 +602,7 @@ nav h3 {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
 }
 
 .album-img-container-wrap {
@@ -897,6 +898,9 @@ iframe {
   }
 
   /* MUSIC */
+  .music-container > div {
+    font-size: min(3.5vw, 1.75vh, 1.5rem);
+  }
 
   /* SHOP */
 

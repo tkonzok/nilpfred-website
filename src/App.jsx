@@ -51,6 +51,8 @@ function App() {
         <Contact />
       </section>
       <Arrow />
+
+      <section className="buffer"></section>
     </>
   );
 }
