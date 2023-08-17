@@ -10,7 +10,7 @@ import Contact from "./Contact.jsx";
 import ArrowDown from "./assets/icons/arrow-down.svg";
 
 function App() {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.9, delay: 1000 });
 
   function Arrow() {
     const handleClick = () => {
@@ -20,7 +20,7 @@ function App() {
 
     return (
       <button
-        className={inView ? "arrow-up" : "arrow-up shown"}
+        className={inView ? "arrow-up not-shown" : "arrow-up shown"}
         onClick={handleClick}
       >
         <img src={ArrowDown} alt="Arrow" />
@@ -31,7 +31,6 @@ function App() {
   return (
     <>
       <Nav />
-      <Arrow />
       <section className="hero-container" ref={ref}>
         <Hero />
       </section>
@@ -51,6 +50,7 @@ function App() {
       <section className="contact-container">
         <Contact />
       </section>
+      <Arrow />
     </>
   );
 }

@@ -86,7 +86,6 @@ a > img:hover {
   border: none;
   background-color: #00000000;
   font-size: 2.5rem;
-  opacity: 0;
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
 }
@@ -99,8 +98,27 @@ a > img:hover {
 }
 
 @keyframes arrow-shown {
+  0% {
+    opacity: 0;
+  }
   100% {
     opacity: 1;
+  }
+}
+
+.arrow-up.not-shown {
+  animation-name: arrow-not-shown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes arrow-not-shown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -813,10 +831,6 @@ iframe {
       calc((100lvh - min(50vh, 220px)) * 0.5);
   }
 
-  .band-img {
-    height: calc((100lvh - min(50vh, 220px)) * 0.4);
-  }
-
   .links-container {
     height: auto;
     width: min(15vh, 64px);
@@ -884,7 +898,7 @@ iframe {
 /* MUSIC */
 @media (min-width: 1024px) {
   .album-img-container-wrap {
-    margin: 1rem auto 1rem 6vw;
+    margin: 1rem 30vw 1rem 0;
     perspective: 530px;
   }
 

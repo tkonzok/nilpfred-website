@@ -15,7 +15,7 @@ import Tobi100 from "./assets/images/tobi_100.jpg";
 
 function CardContainer() {
   const { ref, inView, entry } = useInView({
-    threshold: 0,
+    threshold: 0.5,
     triggerOnce: true,
   });
 
