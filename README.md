@@ -1,6 +1,6 @@
 <h1 align="center">Commander Nilpfred Website</h1>
 
-<p align='center'>![Preview](images/hero.png)</p>
+<p align='center'><img src='images/hero.png'/></p>
 
 <p align='center'>I created a website for my punk rock band with React. Containing a hero, about, music, merch and contact section. As I have a lot of things in mind how to improve this page even more, I'm sure it will change from time to time. For now I think it's quite neat.</p>
 
