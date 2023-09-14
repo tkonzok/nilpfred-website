@@ -35,7 +35,9 @@
 ![](images/music.png)
 ![](images/shop.png)
 ![](images/contact.png)
+
 <h3>Mobile</h3>
+
 ![](images/hero_mobile.png)
 ![](images/about_mobile.png)
 ![](images/music_mobile.png)
