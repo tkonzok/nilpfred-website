@@ -33,7 +33,7 @@
 ![](images/hero.png)
 ![](images/about.png)
 ![](images/music.png)
-![](images/shop.png)
+![](images/merch.png)
 ![](images/contact.png)
 
 <h3>Mobile</h3>
@@ -41,7 +41,7 @@
 ![](images/hero_mobile.png)
 ![](images/about_mobile.png)
 ![](images/music_mobile.png)
-![](images/shop_mobile.png)
+![](images/merch_mobile.png)
 ![](images/contact_mobile.png)
 
 <h2>External Resources</h2>
