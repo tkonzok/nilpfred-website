@@ -47,4 +47,4 @@
 <h2>External Resources</h2>
 
 - Icons by <a target="_blank" href="https://devicon.dev/">DEVICON</a> and <a target="_blank" href="https://pictogrammers.com/library/mdi/">Pictogrammers</a>
-- Images by <a target="_blank" href="https://fotocommunity.de/fotograf/christoph-schwencke/2216245">Christoph Schwencke</a> and cBernardy Werbung
+- Images by <a target="_blank" href="https://fotocommunity.de/fotograf/christoph-schwencke/2216245">Christoph Schwencke</a> and  <a target="_blank" href="http://www.cbernardy.de/">cBernardy Werbung</a>
